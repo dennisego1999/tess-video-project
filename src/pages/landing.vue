@@ -34,7 +34,7 @@ function checkIfHoveringScrollableRow(elements) {
 }
 
 nextTick(() => {
-	//Check scrollable section
+	// Check scrollable section
 	const firstVideoRow = document.getElementById('video-row-1');
 	checkIfHoveringScrollableRow(firstVideoRow.children);
 });
@@ -48,7 +48,7 @@ nextTick(() => {
 				:key="'video-row-' + (index + 1)"
 				:id="'video-row-' + (index + 1)"
 				@mouseover="onMouseOver"
-				class="flex justify-start items-center h-full w-fit max-w-[100vw] overflow-x-auto overflow-y-hidden pointer-events-auto scrollbar-hide"
+				class="snap-center flex justify-start items-center h-full w-fit max-w-[100vw] overflow-x-auto overflow-y-hidden pointer-events-auto scrollbar-hide"
 			>
 				<video
 					v-for="(video, videosIndex) in row.videos"
