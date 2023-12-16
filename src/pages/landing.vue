@@ -49,23 +49,23 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-	<div class="relative">
+	<div class="relative pointer-events-none scrollbar-hide">
 		<div
 			ref="circle"
 			id="drag-circle"
-			class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-red-600"
+			class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-red-600 pointer-events-none"
 		></div>
 
-		<div class="relative z-0 flex flex-col justify-start items-start">
+		<div class="relative z-0 flex flex-col justify-start items-start pointer-events-none">
 			<div
 				v-for="(row, index) in videosData"
 				:key="'video-row-' + (index + 1)"
-				class="flex justify-start items-center h-full w-fit overflow-x-auto overflow-y-hidden"
+				class="flex justify-start items-center h-full w-fit overflow-x-auto overflow-y-hidden pointer-events-auto scrollbar-hide"
 			>
 				<video
 					v-for="(video, videosIndex) in row.videos"
 					:key="'video' + (videosIndex + 1)"
-					class="h-screen w-screen object-cover"
+					class="h-screen w-screen object-cover pointer-events-none"
 					muted
 					autoplay
 					loop
