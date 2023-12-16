@@ -1,8 +1,9 @@
 <script setup>
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { ref } from 'vue';
 
 // Set variables
+const route = useRoute();
 const router = useRouter();
 const navigationItems = ref([
 	{
@@ -29,7 +30,11 @@ function visit(routeName) {
 		<div
 			v-for="(item, index) in navigationItems"
 			:key="'navigation-item-' + index"
-			class="pointer-events-auto cursor-pointer uppercase font-bold text-red-600"
+			class="pointer-events-auto cursor-pointer uppercase font-bold transition-colors duration-500 w-fit"
+			:class="{
+				'text-primary-red hover:text-white': route.name === 'landing_page',
+				'text-white hover:text-primary-yellow': route.name === 'info_page'
+			}"
 			@click="visit(item.route_name)"
 		>
 			{{ item.label }}

@@ -132,7 +132,7 @@ onBeforeUnmount(() => {
 		<div
 			ref="circle"
 			id="drag-circle"
-			class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-red-600 pointer-events-none grid place-content-center"
+			class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-primary-red pointer-events-none grid place-content-center"
 		>
 			<transition name="fade" appear>
 				<p v-if="circleText" class="text-white uppercase font-bold">
@@ -164,15 +164,3 @@ onBeforeUnmount(() => {
 		</div>
 	</div>
 </template>
-
-<style>
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-	opacity: 0;
-}
-</style>
