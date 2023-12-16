@@ -60,12 +60,12 @@ onBeforeUnmount(() => {
 			<div
 				v-for="(row, index) in videosData"
 				:key="'video-row-' + (index + 1)"
-				class="flex justify-start items-center h-full w-fit overflow-x-auto overflow-y-hidden pointer-events-auto scrollbar-hide"
+				class="flex justify-start items-center h-full w-fit max-w-[100vw] overflow-x-auto overflow-y-hidden pointer-events-auto scrollbar-hide"
 			>
 				<video
 					v-for="(video, videosIndex) in row.videos"
 					:key="'video' + (videosIndex + 1)"
-					class="h-screen w-screen object-cover pointer-events-none"
+					class="h-screen w-screen min-h-screen min-w-[100vw] object-cover pointer-events-none"
 					muted
 					autoplay
 					loop
