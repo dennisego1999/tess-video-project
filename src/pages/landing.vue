@@ -28,10 +28,12 @@ function getCircleDimensions() {
 }
 
 function onResize() {
+	// Get circle dimensions
 	getCircleDimensions();
 }
 
 nextTick(() => {
+	// Get circle dimensions
 	getCircleDimensions();
 
 	// Add event listeners
