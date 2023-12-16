@@ -1,4 +1,14 @@
-<script setup></script>
+<script setup>
+import { nextTick } from 'vue';
+
+// Define emits
+const emit = defineEmits(['set-is-hovering']);
+
+nextTick(() => {
+	// Emit
+	emit('set-is-hovering', false);
+});
+</script>
 
 <template>
 	<div class="grid place-content-center h-screen w-screen bg-primary-red">

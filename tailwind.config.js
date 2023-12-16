@@ -6,7 +6,8 @@ export default {
 			colors: {
 				primary: {
 					red: '#FF0000',
-					yellow: '#E6E618'
+					yellow: '#E6E618',
+					gray: '#707070'
 				}
 			}
 		}
