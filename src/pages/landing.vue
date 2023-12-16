@@ -1,5 +1,5 @@
 <script setup>
-import { nextTick, onBeforeUnmount, ref } from 'vue';
+import { nextTick, onBeforeUnmount, ref, watch } from 'vue';
 import { lerp } from '@/helpers/index.js';
 
 // Set variables
@@ -10,6 +10,8 @@ let circleDimensions = null;
 let currentPosition = { top: null, left: null };
 let targetPosition = { top: null, left: null };
 const circle = ref(null);
+const circleText = ref(null);
+const isHoveringScrollableSection = ref(false);
 
 const videoRows = [
 	{ videos: ['F1.mp4', 'F2.mp4', 'F3.mp4', 'F4.mp4', 'F5.mp4', 'F6.mp4'] },
@@ -25,6 +27,18 @@ function onMouseMove(event) {
 	// Set the target position
 	targetPosition.top = event.clientY - circleDimensions.height / 2;
 	targetPosition.left = event.clientX - circleDimensions.width / 2;
+}
+
+function onMouseOver(event) {
+	// Check if the container has multiple children/is scrollable
+	if (event.target.children.length > 1) {
+		// Set reactive
+		isHoveringScrollableSection.value = true;
+		return;
+	}
+
+	// Set reactive
+	isHoveringScrollableSection.value = false;
 }
 
 function getCircleDimensions() {
@@ -63,6 +77,19 @@ function render() {
 	circle.value.style.transform = 'none';
 }
 
+// Watch
+watch(isHoveringScrollableSection, (value) => {
+	if (value) {
+		// Set scrollable text reactive
+		circleText.value = 'scroll';
+
+		return;
+	}
+
+	// Reset scrollable text reactive
+	circleText.value = null;
+});
+
 nextTick(() => {
 	// Get circle dimensions
 	getCircleDimensions();
@@ -96,13 +123,20 @@ onBeforeUnmount(() => {
 		<div
 			ref="circle"
 			id="drag-circle"
-			class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-red-600 pointer-events-none"
-		></div>
+			class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-red-600 pointer-events-none grid place-content-center"
+		>
+			<transition name="fade">
+				<p v-if="circleText" class="text-white uppercase font-bold">
+					{{ circleText }}
+				</p>
+			</transition>
+		</div>
 
 		<div class="relative z-0 flex flex-col justify-start items-start pointer-events-none">
 			<div
 				v-for="(row, index) in videoRows"
 				:key="'video-row-' + (index + 1)"
+				@mouseover="onMouseOver"
 				class="flex justify-start items-center h-full w-fit max-w-[100vw] overflow-x-auto overflow-y-hidden pointer-events-auto scrollbar-hide"
 			>
 				<video
@@ -120,3 +154,15 @@ onBeforeUnmount(() => {
 		</div>
 	</div>
 </template>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+</style>
