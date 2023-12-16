@@ -30,7 +30,7 @@ function visit(routeName) {
 		<div
 			v-for="(item, index) in navigationItems"
 			:key="'navigation-item-' + index"
-			class="pointer-events-auto cursor-pointer uppercase font-bold transition-colors duration-500 w-fit"
+			class="pointer-events-auto cursor-pointer uppercase font-bold transition-all duration-500 w-fit"
 			:class="{
 				'text-primary-red hover:text-white': route.name === 'landing_page',
 				'text-white hover:text-primary-yellow': route.name === 'info_page'
