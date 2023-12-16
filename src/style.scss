@@ -2,17 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-#drag-circle {
-  position: fixed;
-  z-index: 10;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  mix-blend-mode: difference;
-  height: 150px;
-  width: 150px;
-  background-color: red;
-  border-radius: 50%;
-
-}
-

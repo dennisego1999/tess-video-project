@@ -17,11 +17,9 @@ const videosData = [
 // Define functions
 function onMouseMove(event) {
 	// Set the position of the circle
-	circle.value.style.top = event.offsetY - circleDimensions.height / 2 + 'px';
-	circle.value.style.left = event.offsetX - circleDimensions.width / 2 + 'px';
+	circle.value.style.top = event.clientY - circleDimensions.height / 2 + 'px';
+	circle.value.style.left = event.clientX - circleDimensions.width / 2 + 'px';
 	circle.value.style.transform = 'none';
-
-	console.log('moving');
 }
 
 function getCircleDimensions() {
@@ -49,14 +47,18 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-	<div class="relative h-screen w-screen pointer-events-none">
-		<div ref="circle" id="drag-circle"></div>
+	<div class="relative">
+		<div
+			ref="circle"
+			id="drag-circle"
+			class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-red-600"
+		></div>
 
-		<div class="relative z-0 flex flex-col justify-start items-start]">
+		<div class="relative z-0 flex flex-col justify-start items-start">
 			<div
 				v-for="(row, index) in videosData"
 				:key="'video-row-' + (index + 1)"
-				class="flex justify-start items-center h-full w-fit"
+				class="flex justify-start items-center h-full w-fit overflow-x-auto overflow-y-hidden"
 			>
 				<video
 					v-for="(video, videosIndex) in row.videos"
