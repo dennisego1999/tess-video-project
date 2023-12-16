@@ -30,8 +30,13 @@ function onMouseMove(event) {
 }
 
 function onMouseOver(event) {
+	//Check scrollable section
+	checkIfHoveringScrollableRow(event.target.children);
+}
+
+function checkIfHoveringScrollableRow(elements) {
 	// Check if the container has multiple children/is scrollable
-	if (event.target.children.length > 1) {
+	if (elements.length > 1) {
 		// Set reactive
 		isHoveringScrollableSection.value = true;
 		return;
@@ -94,6 +99,10 @@ nextTick(() => {
 	// Get circle dimensions
 	getCircleDimensions();
 
+	//Check scrollable section
+	const firstVideoRow = document.getElementById('video-row-1');
+	checkIfHoveringScrollableRow(firstVideoRow.children);
+
 	// Set initial position values
 	currentPosition.top = window.innerHeight / 2 - circleDimensions.height / 2;
 	currentPosition.left = window.innerWidth / 2 - circleDimensions.width / 2;
@@ -125,7 +134,7 @@ onBeforeUnmount(() => {
 			id="drag-circle"
 			class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-red-600 pointer-events-none grid place-content-center"
 		>
-			<transition name="fade">
+			<transition name="fade" appear>
 				<p v-if="circleText" class="text-white uppercase font-bold">
 					{{ circleText }}
 				</p>
@@ -136,6 +145,7 @@ onBeforeUnmount(() => {
 			<div
 				v-for="(row, index) in videoRows"
 				:key="'video-row-' + (index + 1)"
+				:id="'video-row-' + (index + 1)"
 				@mouseover="onMouseOver"
 				class="flex justify-start items-center h-full w-fit max-w-[100vw] overflow-x-auto overflow-y-hidden pointer-events-auto scrollbar-hide"
 			>
