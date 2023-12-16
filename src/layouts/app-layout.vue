@@ -24,7 +24,9 @@ watch(isHoveringScrollableSection, (value) => {
 <template>
 	<navigation />
 
-	<router-view @setIsHovering="isHoveringScrollableSection = $event" />
+	<transition name="fade" mode="out-in">
+		<router-view @setIsHovering="isHoveringScrollableSection = $event" />
+	</transition>
 
 	<negative-circle :is-hovering-scrollable-section="isHoveringScrollableSection" :text="circleText" />
 </template>
@@ -32,7 +34,7 @@ watch(isHoveringScrollableSection, (value) => {
 <style>
 .fade-enter-active,
 .fade-leave-active {
-	transition: opacity 0.5s ease;
+	transition: opacity 1s ease-in-out;
 }
 
 .fade-enter-from,

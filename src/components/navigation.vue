@@ -7,8 +7,13 @@ const route = useRoute();
 const router = useRouter();
 const navigationItems = ref([
 	{
-		label: 'index',
+		label: 'landing',
 		route_name: 'landing_page',
+		current: false
+	},
+	{
+		label: 'index',
+		route_name: 'examples_page',
 		current: false
 	},
 	{
@@ -31,10 +36,9 @@ function visit(routeName) {
 			v-for="(item, index) in navigationItems"
 			:key="'navigation-item-' + index"
 			class="pointer-events-auto cursor-pointer uppercase font-bold transition-all duration-500 w-fit"
-			:class="{
-				'text-primary-red hover:text-white': route.name === 'landing_page',
-				'text-white hover:text-primary-yellow': route.name === 'info_page'
-			}"
+			:class="[
+				route.name === 'landing_page' ? 'text-primary-red hover:text-white' : 'text-white hover:text-primary-yellow'
+			]"
 			@click="visit(item.route_name)"
 		>
 			{{ item.label }}
