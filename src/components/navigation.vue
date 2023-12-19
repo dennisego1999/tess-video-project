@@ -7,7 +7,7 @@ const route = useRoute();
 const router = useRouter();
 const navigationItems = ref([
 	{
-		label: 'landing',
+		label: 'Tess Ego',
 		route_name: 'landing_page',
 		current: false
 	},
