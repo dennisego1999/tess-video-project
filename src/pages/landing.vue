@@ -41,7 +41,7 @@ nextTick(() => {
 </script>
 
 <template>
-	<div class="relative pointer-events-none scrollbar-hide">
+	<div class="relative pointer-events-none scrollbar-hide overflow-hidden">
 		<div class="relative z-0 flex flex-col justify-start items-start pointer-events-none">
 			<div
 				v-for="(row, index) in videoRows"

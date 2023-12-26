@@ -15,7 +15,7 @@ const routes = [
 		component: info
 	},
 	{
-		path: '/examples_page',
+		path: '/examples',
 		name: 'examples_page',
 		component: examples
 	},
