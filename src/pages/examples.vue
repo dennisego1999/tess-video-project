@@ -55,7 +55,7 @@ nextTick(() => {
 				<img :src="example.image" alt="example image" />
 
 				<p
-					class="transition-opacity text-center text-primary-yellow text-lg"
+					class="font-arialRounded transition-opacity text-center text-primary-yellow text-lg"
 					:class="{ 'opacity-0': !isHovering[index] }"
 				>
 					{{ example.info }}
