@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @for $i from 1 through 12 {
+    .font-outline-#{$i} {
+      -webkit-text-stroke: #{$i}px black;
+      -webkit-text-stroke-color: #FF0000;
+    }
+  }
+}
+
 html {
   scroll-snap-type: y mandatory;
 }

@@ -3,6 +3,9 @@ export default {
 	content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				arialRounded: ['Arial Rounded MT Bold']
+			},
 			colors: {
 				primary: {
 					red: '#FF0000',
