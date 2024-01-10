@@ -10,39 +10,39 @@ const exampleContainers = ref({});
 const examples = ref([
 	{
 		image: '/assets/images/archive-1.png',
-		info: 'Content Magazine #1, ’22-’23 Compiled by Chloé D’Hauwe & Ward Heirwegh [BA2]'
+		info: 'Content Magazine #1, ’22-’23 <br> Compiled by Chloé D’Hauwe & Ward Heirwegh [(19x26 cm), BA2]'
 	},
 	{
 		image: '/assets/images/archive-2.png',
-		info: 'The cure, 2023 Bandshirt'
+		info: 'The cure, 2023 <br> Bandshirt [Three color silk screen]'
 	},
 	{
 		image: '/assets/images/archive-7.jpg',
-		info: 'Brigade cynophile poster 2021 [A3]'
+		info: 'Brigade cynophile, 2021 <br> [A3, Poster]'
 	},
 	{
 		image: '/assets/images/archive-6.png',
-		info: 'Sosia, 2023 Archive film with Sera van de Water'
+		info: 'Sosia, 2023 <br> with Sera van de Water [Video]'
 	},
 	{
 		image: '/assets/images/archive-3.png',
-		info: 'Roundabout club flag, ’22-’23'
+		info: 'Roundabout club flag, ’22-’23 <br> Part of club identity'
 	},
 	{
 		image: '/assets/images/archive-4.png',
-		info: 'Music enhancement in films, ’22-’23 <br> [silk screen on linen]'
+		info: 'Music enhancement in films, ’22-’23 <br> [A5, Silk screen on linen]'
 	},
 	{
 		image: '/assets/images/archive-5.png',
-		info: 'Solidarity palestine, 2023 [RISO]'
+		info: 'Solidarity palestine, 2023 <br> Print on red/green paper [A3, RISO]'
 	},
 	{
 		image: '/assets/images/archive-8.png',
-		info: 'Copacetic type, 2023 redesign 70s UBIK'
+		info: 'Copacetic type, 2023 <br> Redesign 70s UBIK [Uppercase]'
 	},
 	{
 		image: '/assets/images/archive-9.png',
-		info: 'Grafisch Dictee Der Dingen, 2021 collage collectie'
+		info: 'Grafisch Dictee Der Dingen, 2021 <br> Collage collectie [A4, Silk screen]'
 	}
 ]);
 
@@ -68,7 +68,7 @@ nextTick(() => {
 		class="flex flex-col xl:flex-row xl:justify-center justify-center items-center min-h-screen w-screen bg-primary-red"
 	>
 		<div
-			class="flex flex-col xl:grid xl:grid-cols-3 gap-y-10 gap-x-20 max-h-[75vh] overflow-scroll w-full px-8 xl:px-48 my-24"
+			class="relative w-fit flex flex-col xl:grid xl:grid-cols-3 gap-y-10 gap-x-20 max-h-[75vh] overflow-scroll mx-8 xl:mx-48 my-24 border-2 border-primary-yellow p-4"
 		>
 			<div
 				v-for="(example, index) in examples"
