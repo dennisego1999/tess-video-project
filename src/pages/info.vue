@@ -21,12 +21,19 @@ nextTick(() => {
 
 			<div class="flex flex-col items-start justify-center gap-2 text-primary-yellow">
 				<h3 class="font-arialRounded text-lg lg:text-xl xl:text-2xl uppercase font-bold">Mail</h3>
-				<p class="font-arialRounded text-lg lg:text-xl xl:text-2xl pl-8 font-bold">contact@tessego.com</p>
+				<a href="mailto:contact@tessego.com" class="font-arialRounded text-lg lg:text-xl xl:text-2xl pl-8 font-bold"
+					>contact@tessego.com</a
+				>
 			</div>
 
 			<div class="flex flex-col items-start justify-center gap-2 text-primary-yellow">
 				<h3 class="font-arialRounded text-lg lg:text-xl xl:text-2xl uppercase font-bold">Instagram</h3>
-				<p class="font-arialRounded text-lg lg:text-xl xl:text-2xl pl-8 font-bold">@egotess</p>
+				<a
+					target="_blank"
+					href="https://www.instagram.com/egotess/"
+					class="font-arialRounded text-lg lg:text-xl xl:text-2xl pl-8 font-bold"
+					>@egotess</a
+				>
 			</div>
 		</div>
 	</div>

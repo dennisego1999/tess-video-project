@@ -10,23 +10,23 @@ const exampleContainers = ref({});
 const examples = ref([
 	{
 		image: '/assets/images/archive-1.png',
-		info: 'Content Magazine #1, ’22-’23 Compiled by Chloé D’Hauwe & Ward Heirwegh'
+		info: 'Content Magazine #1, ’22-’23 Compiled by Chloé D’Hauwe & Ward Heirwegh [BA2]'
 	},
 	{
 		image: '/assets/images/archive-2.png',
-		info: 'Content Magazine #1, ’22-’23 Compiled by Chloé D’Hauwe & Ward Heirwegh'
+		info: 'The cure, 2023 Bandshirt'
 	},
 	{
 		image: '/assets/images/archive-3.png',
-		info: 'Content Magazine #1, ’22-’23 Compiled by Chloé D’Hauwe & Ward Heirwegh'
+		info: 'Roundabout club flag, ’22-’23'
 	},
 	{
 		image: '/assets/images/archive-4.png',
-		info: 'Content Magazine #1, ’22-’23 Compiled by Chloé D’Hauwe & Ward Heirwegh'
+		info: 'Music enhancement in films, ’22-’23 <br> [silk screen on linen]'
 	},
 	{
 		image: '/assets/images/archive-5.png',
-		info: 'Content Magazine #1, ’22-’23 Compiled by Chloé D’Hauwe & Ward Heirwegh'
+		info: 'Solidarity palestine, 2023 [RISO]'
 	}
 ]);
 
@@ -65,9 +65,8 @@ nextTick(() => {
 				<p
 					class="font-arialRounded transition-opacity text-center text-primary-yellow text-lg"
 					:class="{ 'opacity-0': !isHovering[index] }"
-				>
-					{{ example.info }}
-				</p>
+					v-html="example.info"
+				></p>
 			</div>
 		</div>
 	</div>
