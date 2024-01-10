@@ -17,6 +17,14 @@ const examples = ref([
 		info: 'The cure, 2023 Bandshirt'
 	},
 	{
+		image: '/assets/images/archive-7.jpg',
+		info: 'Brigade cynophile poster 2021 [A3]'
+	},
+	{
+		image: '/assets/images/archive-6.png',
+		info: 'Sosia, 2023 Archive film with Sera van de Water'
+	},
+	{
 		image: '/assets/images/archive-3.png',
 		info: 'Roundabout club flag, ’22-’23'
 	},
@@ -48,9 +56,7 @@ nextTick(() => {
 </script>
 
 <template>
-	<div
-		class="flex flex-col xl:flex-row xl:justify-center items-center min-h-screen xl:h-screen w-screen bg-primary-red"
-	>
+	<div class="flex flex-col xl:flex-row xl:justify-center items-start min-h-screen w-screen bg-primary-red">
 		<div class="flex flex-col xl:grid xl:grid-cols-3 gap-y-10 gap-x-20 h-fit w-full px-8 xl:px-48 my-24 xl:my-32">
 			<div
 				v-for="(example, index) in examples"
@@ -60,7 +66,7 @@ nextTick(() => {
 				@mouseover="isHovering[index] = true"
 				@mouseleave="isHovering[index] = false"
 			>
-				<img :src="example.image" alt="example image" />
+				<img class="max-h-[200px]" :src="example.image" alt="example image" />
 
 				<p
 					class="font-arialRounded transition-opacity text-center text-primary-yellow text-lg"
