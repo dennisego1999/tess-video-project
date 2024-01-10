@@ -11,10 +11,6 @@
   }
 }
 
-html {
-  scroll-snap-type: y mandatory;
-}
-
 body {
   @apply scrollbar-hide;
 }
