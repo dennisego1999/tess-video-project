@@ -64,7 +64,7 @@ nextTick(() => {
 </script>
 
 <template>
-	<div class="relative pointer-events-none scrollbar-hide overflow-hidden">
+	<div class="relative pointer-events-none">
 		<div
 			v-if="isAnimatedTitleActive"
 			class="fixed z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center"
