@@ -31,13 +31,17 @@ function visit(routeName) {
 </script>
 
 <template>
-	<div class="fixed z-40 inset-0 flex flex-col gap-48 h-screen w-screen pointer-events-none pt-10 pl-10">
+	<div
+		class="fixed z-40 inset-0 flex justify-between xl:justify-start xl:flex-col gap-4 xl:gap-48 h-fit xl:h-screen xl:w-screen pointer-events-none pt-3 px-4 xl:pt-10 xl:pl-10"
+	>
 		<div
 			v-for="(item, index) in navigationItems"
 			:key="'navigation-item-' + index"
-			class="font-arialRounded pointer-events-auto cursor-pointer uppercase font-bold transition-all duration-500 w-fit"
+			class="font-arialRounded pointer-events-auto cursor-pointer uppercase font-bold transition-all duration-500 min-w-fit w-fit"
 			:class="[
-				route.name === 'landing_page' ? 'text-primary-red hover:text-white' : 'text-white hover:text-primary-yellow'
+				route.name === 'landing_page'
+					? 'text-primary-red xl:hover:text-white'
+					: 'text-white xl:hover:text-primary-yellow'
 			]"
 			@click="visit(item.route_name)"
 		>

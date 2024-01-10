@@ -68,11 +68,11 @@ nextTick(() => {
 			v-if="isAnimatedTitleActive"
 			class="fixed z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center items-center"
 		>
-			<div v-for="row in animatedTitleRows" :key="row.id" class="flex justify-center items-center gap-[50px]">
+			<div v-for="row in animatedTitleRows" :key="row.id" class="flex justify-center items-center xl:gap-[50px]">
 				<p
 					v-for="(char, index) in row.chars"
 					:key="'char-' + index"
-					class="animated-title-char font-arialRounded font-outline-7 stroke-primary-red text-primary-yellow uppercase text-[300px] leading-[normal]"
+					class="animated-title-char font-arialRounded font-outline-3 lg:font-outline-4 xl:font-outline-7 stroke-primary-red text-primary-yellow uppercase text-8xl md:text-[200px] xl:text-[300px] leading-[normal]"
 				>
 					{{ char }}
 				</p>
@@ -95,6 +95,7 @@ nextTick(() => {
 					autoplay
 					loop
 					playsinline
+					preload="auto"
 				>
 					<source :src="'/assets/videos/' + (index + 1) + '/' + video" />
 				</video>

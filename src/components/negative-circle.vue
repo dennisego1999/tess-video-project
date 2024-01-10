@@ -61,6 +61,10 @@ function getCircleDimensions() {
 }
 
 nextTick(() => {
+	if (!window.matchMedia('(min-width: 1280px)').matches) {
+		return;
+	}
+
 	// Get circle dimensions
 	getCircleDimensions();
 
@@ -92,7 +96,7 @@ onBeforeUnmount(() => {
 	<div
 		ref="circle"
 		id="drag-circle"
-		class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-white border-[1px] border-primary-gray pointer-events-none grid place-content-center"
+		class="fixed z-10 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 mix-blend-difference h-32 w-32 rounded-full bg-white border-[1px] border-primary-gray pointer-events-none hidden xl:grid place-content-center"
 	>
 		<transition name="fade" appear>
 			<p v-if="text" class="font-arialRounded text-primary-red uppercase font-bold">

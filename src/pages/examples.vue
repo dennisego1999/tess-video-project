@@ -35,6 +35,12 @@ nextTick(() => {
 	emit('set-is-hovering', false);
 
 	Object.keys(exampleContainers.value).forEach((key) => {
+		if (!window.matchMedia('(min-width: 1280px)').matches) {
+			isHovering.value[key] = true;
+
+			return;
+		}
+
 		// Set the booleans
 		isHovering.value[key] = false;
 	});
@@ -42,8 +48,10 @@ nextTick(() => {
 </script>
 
 <template>
-	<div class="flex justify-center items-center h-screen w-screen bg-primary-red">
-		<div class="grid grid-cols-3 gap-y-10 gap-x-20 h-fit w-full px-48 my-32">
+	<div
+		class="flex flex-col xl:flex-row xl:justify-center items-center min-h-screen xl:h-screen w-screen bg-primary-red"
+	>
+		<div class="flex flex-col xl:grid xl:grid-cols-3 gap-y-10 gap-x-20 h-fit w-full px-8 xl:px-48 my-24 xl:my-32">
 			<div
 				v-for="(example, index) in examples"
 				:key="'example-' + index"
