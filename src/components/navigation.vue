@@ -32,7 +32,7 @@ function visit(routeName) {
 
 <template>
 	<div
-		class="fixed z-40 inset-0 flex justify-between xl:justify-start xl:flex-col gap-4 xl:gap-48 h-fit xl:h-screen xl:w-screen pointer-events-none pt-3 px-4 xl:pt-10 xl:pl-10"
+		class="fixed z-40 inset-0 flex justify-between xl:justify-center xl:flex-col gap-4 xl:gap-48 h-fit xl:h-screen xl:w-screen pointer-events-none pt-3 px-4 xl:pt-10 xl:pl-10"
 	>
 		<div
 			v-for="(item, index) in navigationItems"

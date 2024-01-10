@@ -64,8 +64,12 @@ nextTick(() => {
 </script>
 
 <template>
-	<div class="flex flex-col xl:flex-row xl:justify-center items-start min-h-screen w-screen bg-primary-red">
-		<div class="flex flex-col xl:grid xl:grid-cols-3 gap-y-10 gap-x-20 h-fit w-full px-8 xl:px-48 my-24 xl:my-32">
+	<div
+		class="flex flex-col xl:flex-row xl:justify-center justify-center items-center min-h-screen w-screen bg-primary-red"
+	>
+		<div
+			class="flex flex-col xl:grid xl:grid-cols-3 gap-y-10 gap-x-20 max-h-[75vh] overflow-scroll w-full px-8 xl:px-48 my-24"
+		>
 			<div
 				v-for="(example, index) in examples"
 				:key="'example-' + index"
