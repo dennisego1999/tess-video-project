@@ -26,6 +26,7 @@
     git stash
     git stash clear
     git pull origin {{ $branch }}
+    git lfs pull
     @if ($build)
         yarn
         yarn build
