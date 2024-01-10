@@ -35,6 +35,14 @@ const examples = ref([
 	{
 		image: '/assets/images/archive-5.png',
 		info: 'Solidarity palestine, 2023 [RISO]'
+	},
+	{
+		image: '/assets/images/archive-8.png',
+		info: 'Copacetic type, 2023 redesign 70s UBIK'
+	},
+	{
+		image: '/assets/images/archive-9.png',
+		info: 'Grafisch Dictee Der Dingen, 2021 collage collectie'
 	}
 ]);
 
