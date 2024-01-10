@@ -4,6 +4,7 @@ import Navigation from '@/components/navigation.vue';
 import NegativeCircle from '@/components/negative-circle.vue';
 
 // Set variables
+const isSmallDevice = ref(window.matchMedia('(min-width: 1280px)').matches);
 const circleText = ref('');
 const isHoveringScrollableSection = ref(false);
 
@@ -30,7 +31,11 @@ watch(isHoveringScrollableSection, (value) => {
 		</transition>
 	</router-view>
 
-	<negative-circle :is-hovering-scrollable-section="isHoveringScrollableSection" :text="circleText" />
+	<negative-circle
+		v-if="isSmallDevice"
+		:is-hovering-scrollable-section="isHoveringScrollableSection"
+		:text="circleText"
+	/>
 </template>
 
 <style>

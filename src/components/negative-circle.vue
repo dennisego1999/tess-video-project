@@ -61,10 +61,6 @@ function getCircleDimensions() {
 }
 
 nextTick(() => {
-	if (!window.matchMedia('(min-width: 1280px)').matches) {
-		return;
-	}
-
 	// Get circle dimensions
 	getCircleDimensions();
 
