@@ -10,11 +10,11 @@ const exampleContainers = ref({});
 const examples = ref([
 	{
 		image: '/assets/images/archive-1.png',
-		info: 'Content Magazine #1, ’22-’23 <br> Compiled by Chloé D’Hauwe & Ward Heirwegh [(19x26 cm), BA2]'
+		info: 'Content Magazine #1, ’22-’23 <br> [(19x26 cm), BA2]'
 	},
 	{
 		image: '/assets/images/archive-2.png',
-		info: 'The cure, 2023 <br> Bandshirt [Three color silk screen]'
+		info: 'Bandshirt, 2023 <br> [Three color silk screen]'
 	},
 	{
 		image: '/assets/images/archive-7.jpg',
@@ -30,11 +30,11 @@ const examples = ref([
 	},
 	{
 		image: '/assets/images/archive-4.png',
-		info: 'Music enhancement in films, ’22-’23 <br> [A5, Silk screen on linen]'
+		info: 'Music enhancement, ’22-’23 <br> [A5, Silk screen on linen]'
 	},
 	{
 		image: '/assets/images/archive-5.png',
-		info: 'Solidarity palestine, 2023 <br> Print on red/green paper [A3, RISO]'
+		info: 'Solidarity palestine, 2023 <br> Red/green paper [A3, RISO]'
 	},
 	{
 		image: '/assets/images/archive-8.png',
@@ -42,7 +42,7 @@ const examples = ref([
 	},
 	{
 		image: '/assets/images/archive-9.png',
-		info: 'Grafisch Dictee Der Dingen, 2021 <br> Collage collectie [A4, Silk screen]'
+		info: 'Grafisch Dictee, 2021 <br> [A4, Silk screen]'
 	}
 ]);
 
