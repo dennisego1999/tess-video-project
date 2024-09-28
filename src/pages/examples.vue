@@ -9,39 +9,39 @@ const isHovering = ref({});
 const exampleContainers = ref({});
 const examples = ref([
 	{
-		image: '/assets/images/archive-1.png',
+		image: '/assets/images/archive-1.webp',
 		info: 'Content Magazine #1, ’22-’23 <br> [(19x26 cm), BA2]'
 	},
 	{
-		image: '/assets/images/archive-2.png',
+		image: '/assets/images/archive-2.webp',
 		info: 'Bandshirt, 2023 <br> [Three color silk screen]'
 	},
 	{
-		image: '/assets/images/archive-7.jpg',
+		image: '/assets/images/archive-7.webp',
 		info: 'Brigade cynophile, 2021 <br> [A3, Poster]'
 	},
 	{
-		image: '/assets/images/archive-6.png',
+		image: '/assets/images/archive-6.webp',
 		info: 'Sosia, 2023 <br> with Sera van de Water [Video]'
 	},
 	{
-		image: '/assets/images/archive-3.png',
+		image: '/assets/images/archive-3.webp',
 		info: 'Roundabout club flag, ’22-’23 <br> Part of club identity'
 	},
 	{
-		image: '/assets/images/archive-4.png',
+		image: '/assets/images/archive-4.webp',
 		info: 'Music enhancement, ’22-’23 <br> [A5, Silk screen on linen]'
 	},
 	{
-		image: '/assets/images/archive-5.png',
+		image: '/assets/images/archive-5.webp',
 		info: 'Solidarity palestine, 2023 <br> Red/green paper [A3, RISO]'
 	},
 	{
-		image: '/assets/images/archive-8.png',
+		image: '/assets/images/archive-8.webp',
 		info: 'Copacetic type, 2023 <br> Redesign 70s UBIK [Uppercase]'
 	},
 	{
-		image: '/assets/images/archive-9.png',
+		image: '/assets/images/archive-9.webp',
 		info: 'Grafisch Dictee, 2021 <br> [A4, Silk screen]'
 	}
 ]);
